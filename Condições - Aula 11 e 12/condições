@@ -1,0 +1,283 @@
+CONDIÇÕES (parte 1) - AULA 11
+
+SEQUÊNCIA CORRETA DE COMO EXECUTAR OS COMANDOS
+
+EXEMPLO:
+
+    var n = 3
+    n += 2
+    Window.alert(n)
+
+- Não tem como executar comandos sem ser nessa ordem acima
+- Vão ter horas que eu vou querer executar o comando três somente se algo acontecer
+- Para isso eu é necessário usar as [CONDIÇÕES] que podemos usar o IF e o ELSE
+
+    - IF = SE algo acontecer executar um comando "X"
+    - ELSE = SE algo NÃO acontecer executar um comando diferente de "X"
+
+
+EXEMPLO PRÁTICO
+
+    var a = 5
+    var b = 10
+    var res = a + b 
+
+    if(res = 15) {
+        print ("a soma está correta")
+    } else {
+        print ("Faça a conta novamente")
+    }
+ 
+
+// TIPOS DE CONDIÇÕES
+
+1) CONDIÇÃO SIMPLES
+
+    if (condição) {
+        TRUE
+    }
+
+2) CONDIÇÃO COMPOSTA
+
+    if (condição) {
+        TRUE
+    } else {
+        false
+    }
+
+//EXEMPLO DE COMO USAR CONDIÇÃO EM ALGO PRÁTICO
+
+    Vamos supor que eu queira fazer um radar que vá multar uma pessoa toda vez que
+    ela passar da velocidade permitida pela via, essa velociade é de 60km/h
+
+    ex: passou a 20km/h 
+
+- JEITO ERRADO DE SE FAZER
+
+    var vel = 20km/h
+    console.log(`A velocidade do seu carro é ${vel}`)
+    console.log(`Você passou a velocidade permitida. MULTADO!`)
+    console.log(`Dirija sempre usando o cinto de segurança!')
+
+- PORQUE ESSE JEITO É ERRADO?
+Sempre vai imprimir na tela os três comandos, ou seja, mesmo que o motorista passe abaixo
+da velocidade permitida, ele levará uma multa, é necessário a modificação manual para cada
+carro que passar e isso seria muito trabalhoso
+
+- Para isso usaremos o IF e ELSE para resolver esse problema, vamos para a situação correta
+
+- JEITO CERTO 
+
+    var vel = 20km/h 
+    console.log(`A velocidade do seu carro é ${vel}`)
+    if(vel > 60km) {
+        console.log(`Você passou a velocidade permitida. MULTADO!`)
+    } else {
+        console.log(`Dirija sempre usando o cinto de segurança!')
+    }
+
+-----------------------------------------------------------------------------------
+- Explicação sobre o problema acima: A velocidade do carro foi definida como 20km/h 
+
+- Imprimiremos na tela "A velocidade do seu carro é ${vel}" para todos os exemplos
+seja acima ou abaixou da velocidade
+
+- Usamos o IF para falar que se a velocidade for maior que 60km/h, ele imprimirar a
+mensagem "Você passou a velocidade permitida. MULTADO!"
+
+- Usamos o ELSE para caso ele esteja abaixo de 60km/h. Se a velocidade for abaixo,
+ele mandará a mensagem de "Dirija sempre usando o cinto de segurança!"
+-----------------------------------------------------------------------------------
+
+
+--
+// Fim da aula
+--
+
+
+CONDIÇÕES (parte 2) - AULA 12
+
+- CONDIÇÃO ANINHADA: É quando se tem uma condição composta e adiciona outras condições dentro dela
+
+-  Para condição 2 ser verdadeira, a condição 1 tem que ser falsa, isso porque se a condição 1 for verdadeira, não há a necessidade de imprimir a condição 2
+
+- Caso a condição 1 e 2 sejam falsas, tem que haver uma condição três até uma ser verdadeira* para situação
+*Uma situação verdadeira pode ser um bloco else para finalizar o código, não há uma necessidade de que ela seja um bloco para validar a informação do bloco 1 
+
+    Exemplo:
+
+    if (condição 1) {
+        [bloco 1]
+    }  else {
+        if(condição 2) {
+            [bloco 2]
+        } else {
+            [bloco 3]
+        }
+    }
+
+    Exemplo 2 : O código pode ser escrito de outra forma para economizar
+    espaço de códigos
+
+    // Ao invés disso //
+    
+    if (condição 1) {
+        [bloco 1]
+    }  else {
+        if(condição 2) {
+            [bloco 2]
+        } else {
+            [bloco 3]
+        }
+    }
+
+    // Podemos escrever assim // 
+
+    if (condição 1) {
+        [bloco 1]
+    }  else if(condição 2){
+            [bloco 2]
+        } else {
+            [bloco 3]
+        }
+    }
+
+// Resumidamente: É quando há mais de uma alternativa para chegar a um objetivo
+    
+    Por exemplo: Vamos supor que eu seja o batedor de pênalti da minha equipe e precise bater um pênalti:
+    - Bater no canto direito
+    - Bater no canto esquerdo
+    - Bater no meio
+    - Bater rasteiro
+    - Bater no ângulo
+    Todas essas são alternativas para um único objetivo, fazer o gol de pênalti, sendo assim, dentro da minha primeira if, eu posso colocar diversas if's com possibilidades
+    para conversão desse pênalti e uma else para caso nenhuma delas seja o suficiente, nesse caso, eu errar (goleiro pegar ou chutar para fora)
+
+    RESOLVA O problema
+
+    // O problema é o seguinte: Imprimir na tela as idades votantes, não votantes e obrigatórias
+    
+    ::Resolução::
+
+    var idade = 2
+    if (idade < 16){
+            document.write("Não vota")
+    } else  if (idade < 18 || idade > 65) {
+            document.write("Voto opcional") 
+    } else {
+            document.write("Voto é obrigatórtio")
+    }
+    
+
+// Como pegar a hora atual do sistema e implementar em um código?
+
+ 1) Criar uma variável
+ var agora = new Date()
+
+ 2) Criar outra variavel
+ var hora = agora.getHour()
+ 
+ 3) Pedir para imprimir o valor de hora que vai ser igual a hora atual do sistema
+
+
+ CONDIÇÃO MULTIPLA 
+
+ Servem para valores fixos, para usar ela é um pouco diferente do IF e ELSE
+
+ - Como representar a condição multipla ?
+
+ switch (expressão) {
+    case valor 1:
+            [Bloco 1]
+        break
+    case valor 2:
+            [Bloco 2]
+        break
+    case valor 3:
+            [Bloco 3]
+        break
+    defaut:
+            [Bloco 4]
+        break
+ }
+
+ - Como funciona ?
+
+    > O Switch vai pegar a expressão e vai tentar achar entre os valores, qual corresponde ao que se pede
+    > É igual ao IF e ELSE, porém aqui você usa valores espcificos para cada case
+    > O "break" entre os códigos é obrigatório em cada expressão, ele servirá para parar o código caso o valor seja verdadeiro
+
+- Exemplo prático: Vamos supor que eu queira falar qual dia da semana estamos
+
+/* OBSERVAÇÃO : Para o JavaScript, os dias da semana são da seguinte forma
+
+        0 = Domingo
+        1 = Segunda
+        2 = Terça
+        3 = Quarta
+        4 = Quinta
+        5 = Sexta
+        6 = Sábado
+
+*/
+
+    - Vamos a resolução do problema
+
+    var agora = new Date()
+    var DiaSem = agora.getDay()
+
+    switch (DiaSem) {
+
+    case 0 = 
+        console.log ("Domingo")
+    break
+    case 1 = 
+        console.log ("Segunda")
+    break
+    case 2 =
+        console.log ("Terça")
+    break
+    case 3 =
+        console.log ("Quarta")
+    break
+    case 4 =
+        console.log ("Quinta")
+    break
+    case 5 =
+        console.log ("Sexta")
+    break
+    case 6 =
+        console.log ("Sábado")
+    break
+
+    defaut = 
+    console.log ('[ERRO] Dia inválido!')
+    }
+
+- Caso seja sábado, o sistema vai enviar o número 6 e o switch vai converter para sábado em formato de string
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+OBSERVAÇÃO 2 -> Já foi falado acima que o break é importante e agora vamos falar o porque... Caso eu não utilize o break, 
+ele vai imprimir todos os cases até chegar na resposta correta. Isso se torna ruim porque eu teria várias respostas ao mesmo
+tempo e eu não quero isso, quando peço o dia da semana, quero saber qual é o verdadeira
+
+Resposta errada SEM O BREAK:
+
+Domingo
+Segunda
+Terça
+Quarta
+Quinta
+Sexta
+Sábado
+[ERRO] Dia inválido!
+
+Resposta certa COM O BREAK
+
+Sábado
+----------------------------------------------------------------------------------------------------------------------------
+
+Da para realizr a tarefa acima usando IF e ELSE, acontece que com a função SWITCH eu acabou escrevendo menos códigos
+

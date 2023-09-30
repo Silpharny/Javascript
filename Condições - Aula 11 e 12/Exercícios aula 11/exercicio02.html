@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;           
+        }
+        h1 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 20px;
+        }
+
+        div#res {
+            margin-top: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DENTRAN INFORMA</h1>
+    <p>Veja sua velocidade abaixo e se você foi MULTADO</p>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="submit" value="Verificar"  onclick= calcular()>
+    <div id="res">
+        
+    </div>
+         
+    <script>  
+
+function calcular() {
+            var txtv = window.document.getElementById("txtvel")
+            var res = window.document.getElementById("res")
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de ${vel}km/h</p>`
+            if (vel > 60) {
+                res.innerHTML += `<p>Você está <strong><span style="color:red">MULTADO!</span></strong></p>`
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`
+        }
+    }
+    </script>
+</body>
+</html>

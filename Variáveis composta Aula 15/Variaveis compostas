@@ -1,0 +1,221 @@
+Variaveis aula 15
+
+- Variável Simples : Só consegue armazenar UM único valor por vez
+- Variável Composta : Consegue armazenar vários valores em uma mesma estrutura
+
+ESTRUTURA DE UMA VARIÁVEL COMPOSTA
+
+    var num =  [x , y , z]
+
+- Ou seja, é uma váriável que podemos usar tanto o "VAR" quanto o "LET"
+- Dentro dessa variável vamos colocar entre chaves os valores que queremos armazenar
+
+    - Explicação didática de variável composta
+        
+        -> Vamos supor que uma pessoa vá ao mercado comprar algumas frutas e tenha apenas
+        uma cesta, entre as frutas que ela precisa comprar são: Banana, maçã, morango e manga.
+
+        - Na variável simples seria: 
+            - Ao pegar a primeira fruta (banana), ela percebeu que a cesta era muito
+            pequena e não conseguiria colocar nenhuma outra naquele local. De fato ela
+            teria um problema e teria que adicionar uma fruta, levar ao caixa, voltar
+            para o local de frutas, pegar outra fruta, levar ao caixa, e assim 
+            sucessivamente até conseguir ter todas as frutas que deseja.
+            - A variável simples só aceita uma fruta por vez, ela não tem espaço para armazenar mais valores
+
+        - Na variável composta seria:
+            - Aqui ela não teria o mesmo problema acima, ela conseguiria pegar todas as
+            frutas e adicionar na mesma cesta.
+            - A variável composta aceita armazenar diversos valores
+
+        - Exemplo da explicação acima
+
+        // VARIÁVEL SIMPLES
+
+        var frutas = "banana"
+
+        // VARIÁVEL COMPOSTA
+
+        var frutas = ["banana" , "maçã" ; "morango" ; "manga"]
+
+- NOMENCLATURA
+
+    - Pegando o mesmo exemplo acima
+    var frutas = [banana , maçã ; morango ; manga]
+
+    > Aray(vetor) : É a nomenclatura da variável, no exemplo acima, a Aray é "frutas"
+    > Elemento : São todos os valores de uma variável [banana , maçã ; morango ; manga]
+    > Índice : Identificador de um elemento. Começa por [0]     [1]     [2]        [3]
+    Cada índice é responsável por um elemento e serve para localizar e identificar um
+    elemento específico
+    > Conteúdo ou valor : É exatamente o que está dentro do elemento, ou seja, banana, 
+    maçã e as outras frutas
+
+
+    - Um ARAY é uma variável que tem vários elementos e cada elemento é composto por seu
+    valor e por uma chave de identificação(índice)
+
+
+- Podemos chamar um vaor específico usando os índices
+    - Vamos supor que eu tenha a seguinte variável
+        > var num = [5, 10, 15, 20, 25]
+    - Se eu quiser imprimir um número específico, vamos
+    pegar o "5", basta eu usar -> num[0]
+    - O num[0] imprimirá o primeiro valor dentro da variável
+    o num [1] imprimirá o segundo, que nesse caso é o "10"
+    e assim sucessivamente
+
+
+- COMO COLOCAR UM VALOR DENTRO DE UMA ARRAY
+
+    - Vamos supor que essa seja minha array:
+    > var num = [5, 10, 15]
+
+    - Para adicionar um valor específico dentro dessa
+    array já construída, podemos usar o seguinte código
+    > num[3] = 20
+    - Explicação: Esse código fala para o sistema adicionar
+    o valor 20 no índice 3, que nesse caso não existe,
+    sendo assim, o próprio sistema criar um novo índice e
+    adiciona o número
+    - Caso já exista um valor no índice indicado, esse valor
+    será substituído pelo novo valor
+
+    - Dessa forma que vimos acima, é muito mais manual, e em
+    uma escala de vários índices, pode ser inviável ficar
+    adicionando valores a uma array
+
+    - Acontece que há uma forma automatizar o processo, ou
+    seja, o próprio sistema vai criar um índice e vai
+    adicionar o valor que desejamos
+
+    - O Código para adicionar esse novo número ao último 
+    índice é o :
+
+    > num.push(5)
+
+OBS: estou usando o "num" antes dos código porque foi o nome
+dado a variável que usamos lá em cima, porém, basta substítuir
+o "num" pelo nome da variável
+
+- COMO SABER O COMPRIMENTO DE UMA ARRAY
+
+    - Quando a array está muito grande e precisamos saber quantos
+    valores estão dentro daquela variável, basta usar o código abaixo
+
+    >num.length
+
+- COMO REORGANIZAR OS ELEMENTOS DE UMA ARRAY
+
+    - Existe um código para organizar uma array, vamos supor que temos
+    a seguinte variável abaixo
+    >var num = [3 ,1  4, 2]
+
+    - Quando usamos o código abaixo, ele reorganizará a nossa variável
+    >num.sort()
+
+    - Após o uso do código, o resutltado será esse:
+    > num = [1, 2, 3, 4]
+
+
+- COMO IMPRIMIR DA FORMA CORRETA
+
+    - Existem diversas formas de imrpimir os valores de uma variável
+    acontece que vamos falar sobre duas formas, uma que é de forma manual
+    e a outra de uma forma mais automatizada e inteligente
+
+        >var num = {2, 3, 4, 5, 6, 7}
+    
+    -> PRIMEIRA FORMA:
+
+    console.log(num[0])
+    console.log(num[1])
+    console.log(num[2])
+    console.log(num[3])
+    console.log(num[4])
+    console.log(num[5])
+
+    - Essa é uma forma manual e que usa bastante código, além disso, não
+    é muito usal. Imagina uma array com 200 valores, seriam 200 códigos
+    escritos para imprimir essa array.
+
+    - Para isso podemos usar o conceito das aulas anteriores de estruturas 
+    de repetição(While, do...while, for)
+
+    -> SEGUNDA FORMA:
+
+    for(var pos=0, pos<num.lenght, pos++) {
+        console.log(num[pos])
+    }
+
+    - O Código acima tem três partes:
+        - INICIALIZAÇÃO: Criar uma variável para a posição[0], ou seja, 
+        a posição que desejamos iniciar o nosso código, o nome dessa 
+        variável será "pos" de posição 
+
+        - TESTE LÓGICO: O código será executado enquanto a posição que
+        começou em 0, for menor que a quantidade de índices de uma
+        variável, o código será executado
+        
+        > No exemplo, é necessário que o código chegue ao elemento [5] para o
+        código deixar de ser executado
+
+        - INCREMENTO: intervalo de 1 número por posição
+
+- Existe uma segunda estrutura de repetição FOR, que é usada exclusivamente para
+variáveis compostas e ela é a seguinte
+
+    - for...in
+
+    for(let pos in num) {
+        console.log(num[pos])
+    }
+
+    - A tradução ao pé da letra de cada uma das partes desse código é assim:
+    - For : Para
+    - let pos: Cada posição 
+    - in: dentro
+    - num: variável num
+    - Console.log(num[pos]): Mostrará o num por posição
+
+    - Ou seja, para cada posição dentro da variável num, mostrará o num por
+    posição
+
+- COMO IDENTIFICAR O ÍNDICE DE UM VETOR
+
+>var num = [10, 20, 30, 40, 50]
+
+    - Para saber o ínidice de um valor específico que está dentro da nossa
+    variável, basta primeiro escolher o número que queremos saber o índice
+
+    - Após saber o número, vamos supor que seja o número 20
+
+    Basta imprimir o código :
+    >num.indexOf(20)
+
+    - Fazendo isso o programa primeiro deixará claro que sim, existe esse
+    valor dentro da variável e ele se encontra no indice [1]
+
+    - Agora vamos supor que eu me enganei e quis procurar um valor que não
+    existe dentro da variável, vamos pegar o valor 25
+
+    - Assim que eu tentar usar o código num.indexOf(25)
+
+    - O programa identificará que esse número não existe dentro da minha
+    variável e me retornará o valor de "-1", esse valor significa que
+    não existe
+
+- Uma forma de deixar o código mais bonito para o usuário final, é usando
+o if...else para imprimir uma mensagem de que o valor buscado não foi
+encontrado, melhor do que imprimir na tela o valor de -1
+
+    - Exemplo do que foi dito no tópico acima
+
+    >var num = [10, 20, 30, 40, 50]
+    var pos = num.indexOf(3)
+    if(pos == -1) {
+        console.log("O valor não foi encontrado!")
+    } else {
+        console.log(`O valor está na posição ${pos}`)
+    }
+

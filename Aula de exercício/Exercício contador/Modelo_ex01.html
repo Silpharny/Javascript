@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+    <section>
+        <div id="dados">
+        <p> 
+            <label for="inicio">Início: </label>
+        </strong> <input type="number" name="inicio" id="inicio" min="1">     
+        </p>
+        <p>
+            <label for="fim">Fim: </label>
+           </strong> <input type="number" name="fim" id="fim" min="1"> 
+        </p>
+        <p>
+            <label for="passo">Passo: </label>
+           </strong> <input type="number" name="passo" id="passo" min="1"> 
+        </p>
+        <p>
+            <input id="button" type="button" value="Contar" onclick="contar()">
+        </p>
+        </div>
+        <div id="res">
+            Contando:
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Sil Miranda</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

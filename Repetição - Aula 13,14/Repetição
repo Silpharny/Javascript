@@ -1,0 +1,179 @@
+Repetição aula 13 (Parte 1)
+
+- Serve para automatizar o processo de repetição de algum processo,
+se eu precisar repetir algo, posso usar o while que ele fará essa
+repetição de forma automatica
+
+- Vamos usar o "While" que significa enquanto
+
+- O while é usado para falar que enquanto uma função estiver
+acontecendo, executar um comando específico
+
+- Usar while vai ajudar a automatizar o processo de repetição
+e vai evitar ficar escrevendo código repetidas vezes
+
+- Exemplo: Vamos supor que eu tenha uma pizza com 8 fatias e
+queira comer todas elas
+
+    - Existem duas formas de resolver o problema acima
+
+    1) function comerPizza() {
+        comerFatia()
+        comerFatia()
+        comerFatia()
+        comerFatia()
+        comerFatia()
+        comerFatia()
+        comerFatia()
+        comerFatia()
+    }
+
+    OBS: Nessa forma de resolução, vão ser escritos muito mais 
+    códigos e as coisas são muito manual;
+
+    OBS 2: Nessa resolução, todo o processo é manual e não 
+    conseguimos automatizar o processo.
+    
+    Caso seja muito mais fatias, é necessário que manualmente 
+    eu adicione mais "comerFatia()"
+
+    2) function comerPizza() {
+        while(temFatia()) {
+            comerFatia()
+        }
+    }
+
+    OBS: Nessa resolução, os código escritos são bem menores
+
+    OBS 2: While significa "enquanto", ou seja, a função pede
+    para comer pizza, a while vai dar o comando para enquanto
+    tiver fatia, é para comer a pizza
+
+    OBS 3: Vai funcionar da seguinte forma: Enquanto temFatia()
+    for verdadeira, ou seja, enquanto tiver fatias de pizza
+    o comando comerPizza() vai ser executado, acontece que o
+    comando só vai parar de se repetir quando for falso, nesse caso,
+    quando não tiver mais fatia de pizza para comer
+
+    OBS 4: O comando consegue ser automatizado, enquanto na solução 1
+    eu preciso imprimir o comando de acordo com a quantidade de pizza,
+    nessa segunda solução, idepende da quantidade de pizzas que tiver
+    o comando vai ser exibido, sejam 8 fatias ou 50 fatias
+
+
+ Exemplo prático
+
+- JEITO NÃO CONVENCIONAL E MANUAL DE FAZER
+
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+console.log("Olá")
+
+
+- JEITO MAIS SIMPLES E RÁPIDO
+var contador = 1
+  while(contador<=8) {
+    console.log("Olá")
+    contador++
+  }
+
+    - Nesse exemplo eu defini uma variavel começando com o valor 1
+    - Fiz um "While", ou seja, enquanto a variavel for menor ou igual a 8
+    o comando olá será exibido
+    - Por fim usamos o contador++ , isso significa que sempre vai somar o
+    contador mais 1, sendo assim, quando o contador vai sendo somado até
+    chegar ao número 8
+
+
+- Existe outra utilidade para a repetição, um exemplo é caso eu queira criar
+vários passos mas não queira escrever todos eles, basta eu usar o comando
+
+    - Exemplo: Crie uma sequência de 8 passos
+
+    var contador = 1
+    while(contador<=8) {
+        console.log(`Passos ${contador}`)
+        contador++
+    }
+
+    - Aqui ele imprimirá na tela, a string "passos" + 8 vezes o contador
+    - Fará uma sequência de passo 1 ; passo 2 ; passo 3 ; passo 4 ; ...
+
+
+ESTRUTURA DE REPETIÇÃO
+
+A primeira é com o teste lógico no início
+
+    1) While (testeLogico) {
+        OqueVaiRepetir() {
+            Ação()
+        }
+    }
+
+A segunda é com o teste lógico no final
+
+    2) do{
+        OqueVaiRepetir() {
+            Ação()
+        }
+    } while(testeLogico)
+
+    - "Do" em inglês significa fazer
+    - Basicamente o comando vai dizer "Faça isso (o problema) enquanto isso estiver acontecendo
+
+- As duas estruturas são usuais
+- A mais usada nas linguagens é a primeira (Com o teste lógico no início)
+
+------------------------------------------------------------------------------------------------
+
+Repetição aula 14 (parte 2)
+
+
+- Agora vamos usar a estrutura FOR
+- Ela é dividida em três partes: Inicialização, um teste lógico e um incremento
+
+     for (início ; teste ; Incremento) {
+     }
+
+- Inicialização: Aqui é onde o código vai se iniciar, geralmente é o 
+valor que atribuimos a variavel
+
+- Teste: Aqui é onde vai o teste lógico que queremos que
+se repita
+
+Incremento: Valor da quantidade de casa que iremos pular até o resultado dar falso
+e o código ser finalizado
+
+
+    - Podemos ver duas estruturas abaixo: WHILE e FOR
+    - Ambas tem a mesma funcionalidade e executam o mesmo código
+    - A FOR é a mais usada e um código escrito com poucas linhas
+    - A while é bem mais fácil de visualisar e entender cada código escrito
+    - Não existe melhor ou pior, apenas aquela que o programador se adaptou
+
+
+    - ESTRUTURA WHILE
+    
+    var c=1
+    while (c<=10) {
+        console.log("olá")
+    c++
+}
+
+   - ESTRUTURA USANDO O FOR
+
+    for(var c=1; c<=10 ; c++) {
+        console.log("Olá")
+}
+
+-----------Fim Aula de repetição-----------
+
+APRENDER SOBRE MODO DE DEPURAÇÃO na aula 14
+
+-------------------------------------------
+

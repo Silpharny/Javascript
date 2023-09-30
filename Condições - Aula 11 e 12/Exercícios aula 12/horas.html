@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+    }
+    h1{
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: lighter;
+    }
+
+</style>
+<body>
+    <h1>São que horas?</h1>
+    <input type="number" name="horas" id="horas">
+    <input type="submit" value="Confirmar" onclick="confirmar()">
+    <div id="res"></div>
+</body>
+<script>  
+    function confirmar() {
+        var horas = window.document.getElementById("horas")
+        var h = Number(horas.value)
+        var boa = window.document.getElementById("res")
+        boa.innerHTML = (`São exatamente ${h} horas`)
+    if (h<=4) {
+    boa.innerHTML += ("<br>Boa madrugada!</br>")
+    } else if (h<=11) {
+        boa.innerHTML += ("<br>Bom dia!</br>")
+    } else if (h<=18) {
+        boa.innerHTML += ("<br>Boa tarde!</br>")
+    } else if (h<23) {
+        boa.innerHTML += ("<br>Boa noite!</br>")
+    }
+}
+
+</script>
+</html>

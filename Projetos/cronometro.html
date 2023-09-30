@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação do Cronometro</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: large;
+            text-align: center;
+            font: 25px Montserrat;
+        }
+
+        #start {
+            background-color: green;
+            color: white;
+            width: 200px;
+            line-height: 100px; 
+            margin-left: auto;
+            margin-right: 650px;
+            margin-top: -151px;
+            border: 1px solid;
+        }
+       
+
+        #pause {
+            background-color: white;
+            color: black;
+            width: 200px;
+            line-height: 100px; 
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -153px;
+            border: 1px solid;
+        }
+
+        #stop {
+            background-color: red;
+            color: white;
+            width: 200px;
+            line-height: 100px; 
+            margin-left: 650px;
+            margin-right: auto;
+            border: 1px solid;
+        }
+
+    #cron {
+        border: 1px solid;
+        width: 700px;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    </style>
+        <p><span id="horas">00</span>:<span id="minutos">00</span>:<span id="segundos">00</span>:<span id="milissegundos">00</p>
+    <button id="iniciar">Iniciar</button>
+    <button id="pausar">Pausar</button>
+    <button id="resetar">Resetar</button>
+
+</head>
+<body>
+    <h1>Iniciando estudos de DOM</h1>
+    <Div id="stop">
+         <p>
+            Stop
+        </p>
+    </Div>
+
+    <Div id="pause">
+        <p>
+            Pause
+        </p>
+    </Div>
+
+    <Div id="start" onmouseenter="entrar()">
+        
+        
+        <p>
+            Start
+        </p>
+    </Div>
+
+    <Div id="cron">
+        
+    </Div>
+
+    <script>
+        function entrar(){
+            var a = window.document.getElementById('start')
+
+        }
+       const botaoIniciar = document.getElementById("start");
+const botaoPausar = document.getElementById("pause");
+const botaoResetar = document.getElementById("stop");
+
+botaoIniciar.addEventListener("click", start);
+botaoPausar.addEventListener("click", pause);
+botaoResetar.addEventListener("click", stop);
+
+let milissegundos = 0;
+let segundos = 0;
+let minutos = 0;
+let horas = 0;
+
+let cronometro;
+let parado = true;
+
+function start() {
+  if (parado) {
+    cronometro = setInterval(cronometrar, 10);
+    parado = false;
+  }
+}
+
+function pause() {
+  clearInterval(cronometro);
+  parado = true;
+}
+
+function stop() {
+  milissegundos = 0;
+  segundos = 0;
+  minutos = 0;
+  horas = 0;
+  
+  atualizarHTML();
+}
+
+function cronometrar() {
+  milissegundos += 10;
+  
+  if (milissegundos == 1000) {
+    milissegundos = 0;
+    segundos += 1;
+  }
+  
+  if (segundos == 60) {
+    segundos = 0;
+    minutos += 1;
+  }
+  
+  if (minutos == 60) {
+    minutos = 0;
+    horas += 1;
+  }
+  
+  atualizarHTML();
+}
+
+function atualizarHTML() {
+  const milissegundosHTML = document.getElementById("milissegundos");
+  const segundosHTML = document.getElementById("segundos");
+  const minutosHTML = document.getElementById("minutos");
+  const horasHTML = document.getElementById("horas");
+  
+  if (milissegundos >= 100) {
+    milissegundosHTML.innerText = milissegundos.toString().slice(0, -1);
+  } else {
+    milissegundosHTML.innerText = "0" + milissegundos.toString().slice(0, -1);
+  }
+  
+  if (segundos >= 10) {
+    segundosHTML.innerText = segundos;
+  } else {
+    segundosHTML.innerText = "0" + segundos;
+  }
+  
+  if (minutos >= 10) {
+    minutosHTML.innerText = minutos;
+  } else {
+    minutosHTML.innerText = "0" + minutos;
+  }
+  
+  if (horas >= 10) {
+    horasHTML.innerText = horas;
+  } else {
+    horasHTML.innerText = "0" + horas;
+  }
+}
+        
+    </script>
+</body>
+</html>
